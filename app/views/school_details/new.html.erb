@@ -1,0 +1,64 @@
+<h4>
+<%= link_to '<', school_index_path, class:"custome-btn btn-floating btn-large waves-effect waves-light red" %> New school details</h4>
+
+
+<%= form_for :schools, :url => schools_path do |f| %>
+<div class="section">
+<div class="left-section">
+<div class="row s9">
+<div class="input-field col s9">
+<%= f.text_field :school_name, class:"validate", required: true %>
+<label for="school_name" class="placeholder-font">School Name</label>
+</div>
+</div>
+
+<div class="row s9">
+<div class="input-field col s9">
+<%= f.text_area :address, class:"materialize-textarea", required: true %>
+<label for="city" class="placeholder-font">Address</label>
+</div>
+</div>
+
+<div class="col-city">
+<div class="row s9">
+<div class="input-field col s9">
+<%= f.text_field :city, class:"validate", required: true %>
+<label for="city" class="placeholder-font">City Name</label>
+</div>
+</div>
+
+<div class="row s9">
+<div class="input-field col s9">
+<%= f.text_field :state, id:"state", class:"validate", required: true %>
+<label for="state" class="placeholder-font">State Name</label>
+</div>
+</div>
+
+<div class="row s9">
+<div class="input-field col s9">
+<%= f.number_field :pin_code, class:"validate", required: true %>
+<label for="pin_code" class="placeholder-font">Pin Code</label>
+</div>
+</div>
+</div>
+</div>
+<div class="right-section">
+<div class="row s9">
+<div class="input-field col s9">
+<h5>AFFILIATED BOARD</h5>
+<br/>
+<p>
+<%= f.radio_button :affiliated_board, 'CBSE', id:"test1" %><label for="test1"><span class="aff-radio">CBSE</span></label>
+
+<%= f.radio_button :affiliated_board, 'ICSE', id:"test2" %><label for="test2"><span class="aff-radio">ICSE</span></label>
+
+<%= f.radio_button :affiliated_board, 'MATRIC', id:"test3" %><label for="test3"><span class="aff-radio">MATRIC</span></label><br/>
+<br/><br/>
+<%= f.radio_button :affiliated_board, 'STATE BOARD', id:"test4" %><label for="test4"><span class="aff-radio">STATE BOARD</span></label>
+</p>
+<%= f.submit 'Submit', class:"waves-effect waves-light btn submit-button" %>
+</div>
+</div>
+</div>
+</div>
+ <% end %>
